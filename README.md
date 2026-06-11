@@ -49,77 +49,141 @@ Offline cache notifications
 Used for maintaining consistent spacing throughout the UI.
 
 
-# Architecture Explanation
-The application follows the Repository Pattern with Provider for state management.
 
-# Architecture Flow
-# Presentation Layer
+# Architecture Explanation
+
+The application follows the **Repository Pattern**, separating the presentation, repository, and data layers to create a clean, maintainable, and scalable architecture.
+
+## Project Structure
+
+```text
+lib
+│
+├── features
+│   └── home
+│       ├── data
+│       │   ├── local
+│       │   └── model
+│       │
+│       ├── presentation
+│       │   ├── provider
+│       │   ├── view
+│       │   └── widgets
+│       │
+│       └── repo
+│
+├── general
+│   ├── core
+│   ├── services
+│   ├── utils
+│   └── widgets
+│
+└── main.dart
+```
+
+## Features Folder
+
+The `features` folder contains all feature-specific modules. Each feature is divided into separate layers to maintain a clear separation of responsibilities.
+
+### Data Layer
+
+Responsible for handling and managing data.
+
+**Components:**
+
+* Models
+* Local Storage (Hive)
+
+### Presentation Layer
 
 Responsible for UI rendering and user interactions.
 
-Components:
+**Components:**
 
-View (screens) 
+* Views (Screens)
+* Widgets
+* Providers
 
-Widgets
+### Repository Layer
 
-Providers
+Acts as a bridge between the presentation layer and data sources.
 
-# Repository Layer
+**Responsibilities:**
 
-Acts as a bridge between the state and data sources.
+* Fetch weather data from the OpenWeather API
+* Handle data-related operations
+* Return processed results to the Provider
 
-Responsibilities:
+## General Folder
 
-Fetch weather data from the API
+The `general` folder contains reusable resources shared across the entire application.
 
-Handle data-related operations
+### Core
 
-Return results to the Provider
+Contains application-wide configurations and constants.
 
-# Data Layer
+**Examples:**
 
-Responsible for managing data from different sources.
+* API endpoints
+* App constants
+* Global configurations
 
-Components:
+### Services
 
-Weather Model
-Local Storage Service (Hive)
+Contains reusable services shared across multiple features.
 
-# State Management
+**Examples:**
 
-Provider is used to:
+* Network services
+* Connectivity services
+* Storage services
 
-Manage loading states
+### Utils
 
-Update weather information
+Contains utility classes and helper functions.
 
-Handle cached data
+**Examples:**
 
-Manage recent searches
+* App colors
+* Extensions
+* Common helper methods
 
-Notify the UI when state changes
+### Widgets
 
-# Local Storage
+Contains reusable widgets used across multiple features.
 
-Hive is used for:
+**Examples:**
 
-Caching the most recently viewed weather data
+* Custom buttons
+* Custom text fields
+* Common loading indicators
 
-Storing recent city searches
+## State Management
 
-Persisting the selected app theme (Dark/Light Mode)
+**Provider** is used to:
 
-# Offline Support
+* Manage loading states
+* Update weather information
+* Handle cached data
+* Manage recent searches
+* Notify the UI when state changes
+
+## Local Storage
+
+**Hive** is used for:
+
+* Caching the most recently viewed weather data
+* Storing recent city searches
+* Persisting the selected app theme (Dark/Light Mode)
+
+## Offline Support
 
 When internet connectivity is unavailable:
 
-The application checks for cached weather data.
+1. The application checks for cached weather data.
+2. If cached data exists, it is displayed to the user.
+3. The UI indicates that cached data is being shown.
+4. If no cached data exists, an appropriate error message is displayed.
 
-If cached data exists, it is displayed to the user.
+This ensures the application remains functional even without an active internet connection.
 
-The UI indicates that cached data is being shown.
-
-If no cached data exists, an appropriate error message is displayed.
-
-This approach ensures the application remains functional even without an active internet connection.

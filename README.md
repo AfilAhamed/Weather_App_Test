@@ -124,8 +124,8 @@ Contains application-wide configurations and constants.
 
 **Examples:**
 
-* API endpoints
 * App constants
+* Type defs
 * Global configurations
 
 ### Services
@@ -136,7 +136,6 @@ Contains reusable services shared across multiple features.
 
 * Network services
 * Connectivity services
-* Storage services
 
 ### Utils
 
@@ -145,7 +144,8 @@ Contains utility classes and helper functions.
 **Examples:**
 
 * App colors
-* Extensions
+* App theme
+* App assets
 * Common helper methods
 
 ### Widgets

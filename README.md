@@ -15,7 +15,9 @@ Used to support local storage.
 
 Stores:
 Last viewed weather data
+
 Recent search history
+
 User theme preference (Dark/Light Mode)
 
 # Connectivity Plus
@@ -23,7 +25,9 @@ User theme preference (Dark/Light Mode)
 Used to monitor internet connectivity.
 
 Responsibilities:
+
 Detect online/offline status
+
 Load cached data when internet is unavailable
 
 # Dio
@@ -36,7 +40,9 @@ Used to display loading placeholders while weather data is being fetched.
 Used to display user feedback messages such as:
 
 Invalid city name
+
 Network errors
+
 Offline cache notifications
 
 # Gap

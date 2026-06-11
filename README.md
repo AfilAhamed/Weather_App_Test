@@ -2,7 +2,7 @@
 
 # Setup Instructions
 
-#API
+# API
 OpenWeather API is used to fetch real-time weather data based on the searched city.
 
 # Packages Used
@@ -10,7 +10,7 @@ OpenWeather API is used to fetch real-time weather data based on the searched ci
 # Provider
 Used for state management.
 
-#Hive & Hive Flutter
+# Hive & Hive Flutter
 Used to support local storage.
 
 Stores:
@@ -29,10 +29,10 @@ Load cached data when internet is unavailable
 # Dio
 Used for making API requests to OpenWeather API and handling responses.
 
-#Shimmer
+# Shimmer
 Used to display loading placeholders while weather data is being fetched.
 
-#Toastification
+# Toastification
 Used to display user feedback messages such as:
 
 Invalid city name

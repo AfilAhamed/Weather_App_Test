@@ -1,17 +1,43 @@
 # weather_app_task
 
-A new Flutter project.
+# Setup Instructions
 
-## Getting Started
+#API
+OpenWeather API is used to fetch real-time weather data based on the searched city.
 
-This project is a starting point for a Flutter application.
+# Packages Used
 
-A few resources to get you started if this is your first Flutter project:
+# Provider
+Used for state management.
 
-- [Learn Flutter](https://docs.flutter.dev/get-started/learn-flutter)
-- [Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Flutter learning resources](https://docs.flutter.dev/reference/learning-resources)
+#Hive & Hive Flutter
+Used to support local storage.
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+Stores:
+Last viewed weather data
+Recent search history
+User theme preference (Dark/Light Mode)
+
+# Connectivity Plus
+
+Used to monitor internet connectivity.
+
+Responsibilities:
+Detect online/offline status
+Load cached data when internet is unavailable
+
+# Dio
+Used for making API requests to OpenWeather API and handling responses.
+
+#Shimmer
+Used to display loading placeholders while weather data is being fetched.
+
+#Toastification
+Used to display user feedback messages such as:
+
+Invalid city name
+Network errors
+Offline cache notifications
+
+# Gap
+Used for maintaining consistent spacing throughout the UI.
